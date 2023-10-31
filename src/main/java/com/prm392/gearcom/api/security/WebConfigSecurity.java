@@ -26,7 +26,7 @@ public class WebConfigSecurity {
                         authorize
                                 .requestMatchers(
                                         "/product",
-                                        "/product/*",
+                                        "/product/c",
                                         "/category",
                                         "/category/*",
                                         "/api/v1/auth/register",

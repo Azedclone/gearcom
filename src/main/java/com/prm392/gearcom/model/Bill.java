@@ -25,10 +25,6 @@ public class Bill {
     @JdbcTypeCode(SqlTypes.TIMESTAMP)
     private Instant createdAt = Instant.now();
 
-    @Column(name = "total_price")
-    @JdbcTypeCode(SqlTypes.DECIMAL)
-    private Double totalPrice;
-
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.REMOVE, optional = false)
     @JoinColumn(name = "user_id", nullable = false)

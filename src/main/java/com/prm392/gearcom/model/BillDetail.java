@@ -21,10 +21,6 @@ public class BillDetail {
     @JdbcTypeCode(SqlTypes.INTEGER)
     private Integer quantity;
 
-    @Column(name = "price", nullable = false)
-    @JdbcTypeCode(SqlTypes.DECIMAL)
-    private Double price;
-
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.REMOVE, optional = false)
     @JoinColumn(name = "bill_id", nullable = false)
