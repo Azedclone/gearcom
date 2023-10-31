@@ -40,7 +40,6 @@ public class AuthController {
         } else {
             LoginResponse response = new LoginResponse();
             response.setJwt(jwt);
-            response.setSuccess(true);
             return ResponseEntity.ok(response);
         }
     }

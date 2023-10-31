@@ -13,13 +13,16 @@ public class RegistrationBody {
     private String username;
     @NotNull
     @NotBlank
+    @Size(min = 6, max = 28)
+//    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")
+    private String password;
+    @NotNull
+    @NotBlank
     private String name;
     @NotNull
     @NotBlank
     private String phone;
     @NotNull
     @NotBlank
-    @Size(min = 6, max = 28)
-//    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")
-    private String password;
+    private String address;
 }

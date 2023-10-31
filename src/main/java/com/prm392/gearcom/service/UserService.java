@@ -35,6 +35,7 @@ public class UserService {
         user.setName(registrationBody.getName());
         user.setPhone(registrationBody.getPhone());
         user.setPassword(encryptionService.encryptPassword(registrationBody.getPassword()));
+        user.setAddress(registrationBody.getAddress());
 
         return userRepository.save(user);
     }
