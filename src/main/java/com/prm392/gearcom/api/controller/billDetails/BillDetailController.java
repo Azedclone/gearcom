@@ -23,7 +23,7 @@ public class BillDetailController {
 
     @PostMapping
     public List<BillDetail> createBillDetails(@RequestBody BillBody body) {
-        return billDetailService.createBillDetails(body.getBill(), body.getBillDetailBodies());
+        return billDetailService.createBillDetails(body.getBillId(), body.getBillDetailBodies());
     }
 
 }

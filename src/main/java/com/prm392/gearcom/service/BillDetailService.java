@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BillDetailService {
@@ -35,10 +36,13 @@ public class BillDetailService {
         return billDetail;
     }
 
-    public List<BillDetail> createBillDetails(Bill bill, List<BillDetailBody> billDetailBodies) {
+    public List<BillDetail> createBillDetails(int billId, List<BillDetailBody> billDetailBodies) {
         List<BillDetail> billDetails = new ArrayList<>();
-        for (BillDetailBody billDetailBody : billDetailBodies) {
-            billDetails.add(createBillDetail(bill, billDetailBody));
+        Bill bill = billService.getBillById(billId);
+        if (bill != null) {
+            for (BillDetailBody billDetailBody : billDetailBodies) {
+                billDetails.add(createBillDetail(bill, billDetailBody));
+            }
         }
 
         return billDetailRepository.saveAll(billDetails);

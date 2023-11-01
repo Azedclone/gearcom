@@ -16,8 +16,7 @@ public class BillService {
         this.billRepository = _billRepository;
     }
 
-    public Bill createBill(@AuthenticationPrincipal User user) {
-        Bill bill = new Bill();
+    public Bill createBill(Bill bill, @AuthenticationPrincipal User user) {
         bill.setUser(user);
 
         return billRepository.save(bill);

@@ -25,6 +25,10 @@ public class Bill {
     @JdbcTypeCode(SqlTypes.TIMESTAMP)
     private Instant createdAt = Instant.now();
 
+    @Column(name = "total_price", nullable = false)
+    @JdbcTypeCode(SqlTypes.DOUBLE)
+    private Double totalPrice;
+
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.REMOVE, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
@@ -33,5 +37,4 @@ public class Bill {
     @JsonIgnore
     @OneToMany(mappedBy = "bill", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<BillDetail> billDetails = new ArrayList<>();
-
 }

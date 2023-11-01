@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class BillDetailBody {
     @NotNull
-    private int quantity;
-    @NotNull
     private int productId;
+    @NotNull
+    private int quantity;
 }

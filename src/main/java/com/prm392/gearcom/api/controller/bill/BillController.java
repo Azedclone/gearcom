@@ -5,6 +5,7 @@ import com.prm392.gearcom.model.User;
 import com.prm392.gearcom.service.BillService;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,8 +20,8 @@ public class BillController {
     }
 
     @PostMapping
-    public Bill createBill(@AuthenticationPrincipal User user) {
-        return billService.createBill(user);
+    public Bill createBill(@RequestBody Bill bill, @AuthenticationPrincipal User user) {
+        return billService.createBill(bill, user);
     }
 
 }
