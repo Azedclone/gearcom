@@ -35,7 +35,7 @@ public class CartController {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
     }
-    @DeleteMapping
+    @PostMapping("/remove")
     public ResponseEntity<Cart> removeFromCart(@AuthenticationPrincipal User user,@Valid @RequestBody Cart cart) {
         try {
             cartService.removeFromCart(user,cart);
