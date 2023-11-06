@@ -30,5 +30,4 @@ public class ProductService {
         products = productRepository.findByCategory_Id(id);
         return products;
     }
-
 }

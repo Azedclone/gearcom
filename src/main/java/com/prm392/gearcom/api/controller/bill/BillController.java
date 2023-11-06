@@ -1,5 +1,6 @@
 package com.prm392.gearcom.api.controller.bill;
 
+import com.prm392.gearcom.api.model.BillBody;
 import com.prm392.gearcom.model.Bill;
 import com.prm392.gearcom.model.User;
 import com.prm392.gearcom.service.BillService;
@@ -20,8 +21,11 @@ public class BillController {
     }
 
     @PostMapping
-    public Bill createBill(@RequestBody Bill bill, @AuthenticationPrincipal User user) {
-        return billService.createBill(bill, user);
+    public void createBill(@RequestBody BillBody body, @AuthenticationPrincipal User user) {
+        try {
+            billService.createBill(body, user);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
-
 }
