@@ -30,6 +30,8 @@ public class WebConfigSecurity {
                                         "/category",
                                         "/category/*",
                                         "/api/v1/auth/register",
+                                        "/cart",
+                                        "/cart/remove",
                                         "/api/v1/auth/login").permitAll()
                                 .anyRequest().authenticated());
 

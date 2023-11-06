@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 public class BillBody {
     @NotNull
-    private int billId;
+    private Bill bill;
     @NotNull
     private List<BillDetailBody> billDetailBodies;
 }
